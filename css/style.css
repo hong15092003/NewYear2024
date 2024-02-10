@@ -63,4 +63,5 @@ canvas {
     cursor: crosshair;
     display: block;
     position: fixed;
+    width: 100vw;
 }

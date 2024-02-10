@@ -183,7 +183,10 @@ function loop() {
     requestAnimFrame(loop);
 
     // increase the hue to get different colored fireworks over time
-    hue += 0.5;
+    for (var i = 0; i < 100; i++) {
+        hue += 0.5;
+    }
+    // hue += 0.5;
     // normally, clearRect() would be used to clear the canvas
     // we want to create a trailing effect though
     // setting the composite operation to destination-out will allow us to clear the canvas at a specific opacity, rather than wiping it entirely
@@ -197,7 +200,7 @@ function loop() {
     // loop over each firework, draw it, update it
     var i = fireworks.length;
     // Add glowing effect to background points
-    
+
     while (i--) {
         fireworks[i].draw();
         fireworks[i].update(i);
@@ -220,7 +223,7 @@ function loop() {
     } else {
         timerTick++;
     }
-   
+
     // limit the rate at which fireworks get launched when mouse is down
     if (limiterTick >= limiterTotal) {
         if (mousedown) {
